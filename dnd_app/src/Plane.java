@@ -6,12 +6,14 @@ public class Plane {
     private LinkedList<Element> elements;
     private LinkedList<Wall> walls;
     private static Plane single_instance = null;
+    private LinkedList<Creature> creatures;
 
     private Plane() {
         this.width = 200;
         this.length = 200;
         this.elements = new LinkedList<>();
         this.walls = new LinkedList<>();
+        this.creatures = new LinkedList<>();
 
     }
 
@@ -109,5 +111,16 @@ public class Plane {
 
         }
 
+    }
+
+    public void addCreature(Creature creature) {
+        this.creatures.add(creature);
+    }
+    public LinkedList<Creature> getCreatures() {
+        return creatures;
+    }
+
+    public void removeCreature(Creature creature) {
+        this.creatures.remove(creature);
     }
 }
